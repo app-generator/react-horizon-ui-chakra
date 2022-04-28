@@ -1,3 +1,9 @@
+
+## [1.0.0] 2022-04-28
+
+-  AppSeed Import
+-  Template version
+
 ## [1.0.1] 2022-04-25
 
 ### Multiple design bugs on mobile solved
