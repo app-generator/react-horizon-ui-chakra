@@ -20,14 +20,16 @@ import RTL from "views/admin/rtl";
 
 // Auth Imports
 import SignInCentered from "views/auth/signIn";
+import SignUpCentered from "views/auth/signUp";
 
 const routes = [
   {
     name: "Main Dashboard",
     layout: "/admin",
-    path: "/default",
+    path: "/dashboard",
     icon: <Icon as={MdHome} width='20px' height='20px' color='inherit' />,
     component: MainDashboard,
+    hide: false
   },
   {
     name: "NFT Marketplace",
@@ -43,6 +45,7 @@ const routes = [
     ),
     component: NFTMarketplace,
     secondary: true,
+    hide: false
   },
   {
     name: "Data Tables",
@@ -50,6 +53,7 @@ const routes = [
     icon: <Icon as={MdBarChart} width='20px' height='20px' color='inherit' />,
     path: "/data-tables",
     component: DataTables,
+    hide: false
   },
   {
     name: "Kanban",
@@ -57,6 +61,7 @@ const routes = [
     icon: <Icon as={MdDashboard} width='20px' height='20px' color='inherit' />,
     path: "/kanban",
     component: Kanban,
+    hide: false
   },
   {
     name: "Profile",
@@ -64,6 +69,7 @@ const routes = [
     path: "/profile",
     icon: <Icon as={MdPerson} width='20px' height='20px' color='inherit' />,
     component: Profile,
+    hide: false
   },
   {
     name: "Sign In",
@@ -71,6 +77,15 @@ const routes = [
     path: "/sign-in",
     icon: <Icon as={MdLock} width='20px' height='20px' color='inherit' />,
     component: SignInCentered,
+    hide: true
+  },
+  {
+    name: "Sign Up",
+    layout: "/auth",
+    path: "/sign-up",
+    icon: <Icon as={MdLock} width='20px' height='20px' color='inherit' />,
+    component: SignUpCentered,
+    hide: true
   },
   {
     name: "RTL Admin",
@@ -78,6 +93,7 @@ const routes = [
     path: "/rtl-default",
     icon: <Icon as={MdHome} width='20px' height='20px' color='inherit' />,
     component: RTL,
+    hide: false
   },
 ];
 

@@ -18,3 +18,6 @@
 ### Original Release
 
 - Added Chakra UI as base framework
+- Implemented Login functionality
+- Implemented Register Functionality
+- Implemented auth route functionality

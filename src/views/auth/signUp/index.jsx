@@ -30,12 +30,13 @@ import AuthApi from "../../../api/auth";
 
 import { useHistory } from "react-router-dom";
 
-function SignIn() {
+function SignUp() {
 
+  const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [buttonText, setButtonText] = useState("Sign up");
   const [error, setError] = useState(undefined);
-  const [buttonText, setButtonText] = useState("Sign in");
   const history = useHistory();
   const { setUser } = useAuth();
   const { user } = useAuth();
@@ -59,47 +60,39 @@ function SignIn() {
   const [show, setShow] = React.useState(false);
   const handleClick = () => setShow(!show);
 
-  const login = async (event) => {
+  const register = async (event) => {
     if (event) {
       event.preventDefault();
     }
-    if (user && user.token) {
-      return history.push("/dashboard");
+    if (name === "") {
+      return setError("You must enter your name.");
     }
     if (email === "") {
       return setError("You must enter your email.");
     }
     if (password === "") {
-      return setError("You must enter your password");
+      return setError("You must enter a password.");
     }
-    setButtonText("Signing in");
     try {
-      let response = await AuthApi.Login({
+      setButtonText("Signing up");
+      let response = await AuthApi.Register({
+        username: name,
         email,
         password,
       });
       if (response.data && response.data.success === false) {
-        setButtonText("Sign in");
+        setButtonText("Sign up");
         return setError(response.data.msg);
       }
-      return setProfile(response);
+      return history.push("/auth/signin");
     } catch (err) {
       console.log(err);
-      setButtonText("Sign in");
+      setButtonText("Sign up");
       if (err.response) {
         return setError(err.response.data.msg);
       }
       return setError("There has been an error.");
     }
-  };
-
-  const setProfile = async (response) => {
-    let user = { ...response.data.user };
-    user.token = response.data.token;
-    user = JSON.stringify(user);
-    setUser(user);
-    localStorage.setItem("user", user);
-    return history.push("/dashboard");
   };
 
   return (
@@ -118,7 +111,7 @@ function SignIn() {
         flexDirection='column'>
         <Box me='auto'>
           <Heading color={textColor} fontSize='36px' mb='10px'>
-            Sign In
+            Sign Up
           </Heading>
           <Text
             mb='36px'
@@ -126,7 +119,7 @@ function SignIn() {
             color={textColorSecondary}
             fontWeight='400'
             fontSize='md'>
-            Enter your email and password to sign in!
+            Enter your username, email and password to sign up!
           </Text>
         </Box>
         <Flex
@@ -151,6 +144,29 @@ function SignIn() {
               {error}
             </h4>
           <FormControl>
+            <FormLabel
+              display='flex'
+              ms='4px'
+              fontSize='sm'
+              fontWeight='500'
+              color={textColor}
+              mb='8px'>
+              User Name<Text color={brandStars}>*</Text>
+            </FormLabel>
+            <Input
+              variant='auth'
+              fontSize='sm'
+              ms={{ base: "0px", md: "0px" }}
+              type='text'
+              placeholder='John deo'
+              mb='24px'
+              fontWeight='500'
+              size='lg'
+              onChange={(event) => {
+                setName(event.target.value);
+                setError(undefined);
+              }}
+            />
             <FormLabel
               display='flex'
               ms='4px'
@@ -204,33 +220,7 @@ function SignIn() {
                 />
               </InputRightElement>
             </InputGroup>
-            <Flex justifyContent='space-between' align='center' mb='24px'>
-              <FormControl display='flex' alignItems='center'>
-                <Checkbox
-                  id='remember-login'
-                  colorScheme='brandScheme'
-                  me='10px'
-                />
-                <FormLabel
-                  htmlFor='remember-login'
-                  mb='0'
-                  fontWeight='normal'
-                  color={textColor}
-                  fontSize='sm'>
-                  Keep me logged in
-                </FormLabel>
-              </FormControl>
-              <NavLink to='/auth/forgot-password'>
-                <Text
-                  color={textColorBrand}
-                  fontSize='sm'
-                  w='124px'
-                  fontWeight='500'>
-                  Forgot password?
-                </Text>
-              </NavLink>
-            </Flex>
-          
+            
             <Button
               fontSize='sm'
               variant='brand'
@@ -238,7 +228,7 @@ function SignIn() {
               w='100%'
               h='50'
               mb='24px'
-              onClick={login}
+              onClick={register}
               >
                {buttonText}
             </Button>
@@ -250,14 +240,14 @@ function SignIn() {
             maxW='100%'
             mt='0px'>
             <Text color={textColorDetails} fontWeight='400' fontSize='14px'>
-              Not registered yet?
-              <NavLink to='/auth/sign-up'>
+              Already have account?
+              <NavLink to='/auth/sign-in'>
                 <Text
                   color={textColorBrand}
                   as='span'
                   ms='5px'
                   fontWeight='500'>
-                  Create an Account
+                  Login
                 </Text>
               </NavLink>
             </Text>
@@ -268,4 +258,4 @@ function SignIn() {
   );
 }
 
-export default SignIn;
+export default SignUp;

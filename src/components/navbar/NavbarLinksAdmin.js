@@ -25,9 +25,16 @@ import navImage from "assets/img/layout/Navbar.png";
 import { MdNotificationsNone, MdInfoOutline } from "react-icons/md";
 import { IoMdMoon, IoMdSunny } from "react-icons/io";
 import { FaEthereum } from "react-icons/fa";
+import AuthApi from "../../api/auth";
+import { useHistory } from "react-router-dom";
+import { useAuth } from "../../auth-context/auth.context";
+
 import routes from "routes.js";
 export default function HeaderLinks(props) {
   const { secondary } = props;
+  const history = useHistory();
+  const { setUser } = useAuth();
+  let { user } = useAuth();
   const { colorMode, toggleColorMode } = useColorMode();
   // Chakra Color Mode
   const navbarIcon = useColorModeValue("gray.400", "white");
@@ -43,6 +50,14 @@ export default function HeaderLinks(props) {
     "14px 17px 40px 4px rgba(112, 144, 176, 0.06)"
   );
   const borderButton = useColorModeValue("secondaryGray.500", "whiteAlpha.200");
+
+  const handleLogout = async () => {
+    await AuthApi.Logout(user);
+    await setUser(null);
+    localStorage.removeItem("user");
+    return history.push("/auth/signin");
+  };
+
   return (
     <Flex
       w={{ sm: "100%", md: "auto" }}
@@ -275,6 +290,7 @@ export default function HeaderLinks(props) {
               _focus={{ bg: "none" }}
               color='red.400'
               borderRadius='8px'
+              onClick={handleLogout}
               px='14px'>
               <Text fontSize='sm'>Log out</Text>
             </MenuItem>

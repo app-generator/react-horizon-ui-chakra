@@ -51,7 +51,10 @@ export function SidebarLinks(props) {
         route.layout === "/auth" ||
         route.layout === "/rtl"
       ) {
-        return (
+        return <>
+          {route.hide ?
+            null
+            :
           <NavLink to={route.layout + route.path}>
             {route.icon ? (
               <Box>
@@ -123,7 +126,8 @@ export function SidebarLinks(props) {
               </Box>
             )}
           </NavLink>
-        );
+          }
+        </>
       }
     });
   };
