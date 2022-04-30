@@ -32,8 +32,8 @@ import { useHistory } from "react-router-dom";
 
 function SignIn() {
 
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState("test@appseed.us");
+  const [password, setPassword] = useState("pass");
   const [error, setError] = useState(undefined);
   const [buttonText, setButtonText] = useState("Sign in");
   const history = useHistory();
@@ -166,6 +166,7 @@ function SignIn() {
               ms={{ base: "0px", md: "0px" }}
               type='email'
               placeholder='mail@simmmple.com'
+              value={email}
               mb='24px'
               fontWeight='500'
               size='lg'
@@ -187,6 +188,7 @@ function SignIn() {
                 fontSize='sm'
                 placeholder='Min. 8 characters'
                 mb='24px'
+                value={password}
                 size='lg'
                 type={show ? "text" : "password"}
                 variant='auth'
