@@ -1,4 +1,9 @@
 
+## [1.0.1] 2022-04-30
+### Improvements
+
+- Added JWT Auth 
+
 ## [1.0.0] 2022-04-28
 
 -  AppSeed Import
