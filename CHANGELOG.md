@@ -1,4 +1,9 @@
 
+## [1.0.2] 2022-04-30
+### Fixes
+
+- Patch #1 - SignIN Default Credentials not taken into account 
+
 ## [1.0.1] 2022-04-30
 ### Improvements
 

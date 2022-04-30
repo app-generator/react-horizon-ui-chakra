@@ -32,8 +32,8 @@ import { useHistory } from "react-router-dom";
 
 function SignIn() {
 
-  const [email, setEmail] = useState("test@appseed.us");
-  const [password, setPassword] = useState("pass");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const [error, setError] = useState(undefined);
   const [buttonText, setButtonText] = useState("Sign in");
   const history = useHistory();
