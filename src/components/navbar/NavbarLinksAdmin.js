@@ -21,12 +21,19 @@ import { SidebarResponsive } from "components/sidebar/Sidebar";
 import PropTypes from "prop-types";
 import React from "react";
 // Assets
+import { useHistory } from "react-router-dom";
+import { useAuth } from "../../auth-context/auth.context";
+import AuthApi from "../../api/auth";
+
 import navImage from "assets/img/layout/Navbar.png";
 import { MdNotificationsNone, MdInfoOutline } from "react-icons/md";
 import { IoMdMoon, IoMdSunny } from "react-icons/io";
 import { FaEthereum } from "react-icons/fa";
 import routes from "routes.js";
 export default function HeaderLinks(props) {
+  const history = useHistory();
+  const { setUser } = useAuth();
+  let { user } = useAuth();
   const { secondary } = props;
   const { colorMode, toggleColorMode } = useColorMode();
   // Chakra Color Mode
@@ -42,6 +49,12 @@ export default function HeaderLinks(props) {
     "14px 17px 40px 4px rgba(112, 144, 176, 0.18)",
     "14px 17px 40px 4px rgba(112, 144, 176, 0.06)"
   );
+  const handleLogout = async () => {
+    await AuthApi.Logout(user);
+    await setUser(null);
+    localStorage.removeItem("user");
+    return history.push("/auth/signin");
+  };
   const borderButton = useColorModeValue("secondaryGray.500", "whiteAlpha.200");
   return (
     <Flex
@@ -275,7 +288,8 @@ export default function HeaderLinks(props) {
               _focus={{ bg: "none" }}
               color='red.400'
               borderRadius='8px'
-              px='14px'>
+              px='14px'
+              onClick={handleLogout}>
               <Text fontSize='sm'>Log out</Text>
             </MenuItem>
           </Flex>

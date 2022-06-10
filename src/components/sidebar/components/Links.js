@@ -2,9 +2,24 @@
 import React from "react";
 import { NavLink, useLocation } from "react-router-dom";
 // chakra imports
+import { useHistory } from "react-router-dom";
+import { useAuth } from "../../../auth-context/auth.context";
+import { Logout } from "../../../routes";
 import { Box, Flex, HStack, Text, useColorModeValue } from "@chakra-ui/react";
+import AuthApi from "../../../api/auth";
+
 
 export function SidebarLinks(props) {
+  const history = useHistory();
+  const { setUser } = useAuth();
+  let { user } = useAuth();
+    const handleLogout = async () => {
+      // console.log("Sgmfi");
+    await AuthApi.Logout(user);
+    await setUser(null);
+    localStorage.removeItem("user");
+    return history.push("/auth/signin");
+  };
   //   Chakra color mode
   let location = useLocation();
   let activeColor = useColorModeValue("gray.700", "white");
@@ -127,8 +142,74 @@ export function SidebarLinks(props) {
       }
     });
   };
+  const createLogout = (routes) => {
+    return routes.map((route, key) => {
+      return (
+        <NavLink to={route.layout + route.path} key={key} onClick={handleLogout}>
+              {route.icon ? (
+                <Flex
+                  align='center'
+                  justifyContent='space-between'
+                  w='100%'
+                  ps='17px'
+                  mb='0px'>
+                  <HStack
+                    mb='6px'
+                    spacing={
+                      activeRoute(route.path.toLowerCase()) ? "22px" : "26px"
+                    }>
+                    <Flex w='100%' alignItems='center' justifyContent='center'>
+                      <Box
+                        color={
+                          activeRoute(route.path.toLowerCase())
+                            ? activeIcon
+                            : inactiveColor
+                        }
+                        me='12px'
+                        mt='6px'>
+                        {route.icon}
+                      </Box>
+                      <Text
+                        me='auto'
+                        color={
+                          activeRoute(route.path.toLowerCase())
+                            ? activeColor
+                            : "secondaryGray.600"
+                        }
+                        fontWeight='500'>
+                        {route.name}
+                      </Text>
+                    </Flex>
+                  </HStack>
+                </Flex>
+              ) : (
+                <ListItem ms={null}>
+                  <Flex ps='34px' alignItems='center' mb='8px'>
+                    <Text
+                      color={
+                        activeRoute(route.path.toLowerCase())
+                          ? activeColor
+                          : inactiveColor
+                      }
+                      fontWeight='500'
+                      fontSize='sm'>
+                      {route.name}
+                    </Text>
+                  </Flex>
+                </ListItem>
+              )}
+            </NavLink>
+      );
+    });
+  };
   //  BRAND
-  return createLinks(routes);
+  return (
+    <>
+      {createLinks(routes)}
+      {createLogout(Logout)}
+
+    </>
+  );
 }
 
 export default SidebarLinks;

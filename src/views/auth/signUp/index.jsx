@@ -20,9 +20,7 @@
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
 */
-import React,{useState} from "react";
 
-import { useHistory } from "react-router-dom";
 import { NavLink } from "react-router-dom";
 // Chakra imports
 import {
@@ -38,9 +36,14 @@ import {
   InputGroup,
   InputRightElement,
   Text,
+  Link,
   useColorModeValue,
 } from "@chakra-ui/react";
 // Custom components
+import React, { useState } from "react";
+import { useHistory } from "react-router-dom";
+import { useAuth } from "../../../auth-context/auth.context";
+import AuthApi from "../../../api/auth";
 import { HSeparator } from "components/separator/Separator";
 import DefaultAuth from "layouts/auth/Default";
 // Assets
@@ -48,17 +51,16 @@ import illustration from "assets/img/auth/auth.png";
 import { FcGoogle } from "react-icons/fc";
 import { MdOutlineRemoveRedEye } from "react-icons/md";
 import { RiEyeCloseLine } from "react-icons/ri";
-import { useAuth } from "../../../auth-context/auth.context";
-import AuthApi from "../../../api/auth";
+
 function SignIn() {
+  const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [buttonText, setButtonText] = useState("Sign up");
   const [error, setError] = useState(undefined);
-  const [buttonText, setButtonText] = useState("Sign in");
   const history = useHistory();
   const { setUser } = useAuth();
   const { user } = useAuth();
-  
   // Chakra color mode
   const textColor = useColorModeValue("navy.700", "white");
   const textColorSecondary = "gray.400";
@@ -77,46 +79,39 @@ function SignIn() {
   );
   const [show, setShow] = React.useState(false);
   const handleClick = () => setShow(!show);
-  const login = async (event) => {
+  const register = async (event) => {
     if (event) {
       event.preventDefault();
     }
-    if (user && user.token) {
-      return history.push("/admin/dashboards");
+    if (name === "") {
+      return setError("You must enter your name.");
     }
     if (email === "") {
       return setError("You must enter your email.");
     }
     if (password === "") {
-      return setError("You must enter your password");
+      return setError("You must enter a password.");
     }
-    setButtonText("Signing in");
     try {
-      let response = await AuthApi.Login({
+      setButtonText("Signing up");
+      let response = await AuthApi.Register({
+        username: name,
         email,
         password,
       });
       if (response.data && response.data.success === false) {
-        setButtonText("Sign in");
+        setButtonText("Sign up");
         return setError(response.data.msg);
       }
-      return setProfile(response);
+      return history.push("/auth/sign-in");
     } catch (err) {
       console.log(err);
-      setButtonText("Sign in");
+      setButtonText("Sign up");
       if (err.response) {
         return setError(err.response.data.msg);
       }
       return setError("There has been an error.");
     }
-  };
-  const setProfile = async (response) => {
-    let user = { ...response.data.user };
-    user.token = response.data.token;
-    user = JSON.stringify(user);
-    setUser(user);
-    localStorage.setItem("user", user);
-    return history.push("/dashboards");
   };
   return (
     <DefaultAuth illustrationBackground={illustration} image={illustration}>
@@ -134,7 +129,7 @@ function SignIn() {
         flexDirection='column'>
         <Box me='auto'>
           <Heading color={textColor} fontSize='36px' mb='10px'>
-            Sign In
+            Sign Up
           </Heading>
           <Text
             mb='36px'
@@ -142,7 +137,7 @@ function SignIn() {
             color={textColorSecondary}
             fontWeight='400'
             fontSize='md'>
-            Enter your email and password to sign in!
+            Enter your email and password to sign up!
           </Text>
         </Box>
         <Flex
@@ -155,17 +150,16 @@ function SignIn() {
           mx={{ base: "auto", lg: "unset" }}
           me='auto'
           mb={{ base: "20px", md: "auto" }}>
-         
           <Flex
-          zIndex='2'
-          direction='column'
-          w={{ base: "100%", md: "420px" }}
-          maxW='100%'
-          background='transparent'
-          borderRadius='15px'
-          mx={{ base: "auto", lg: "unset" }}
-          me='auto'
-          mb={{ base: "20px", md: "auto" }}>
+            zIndex='2'
+            direction='column'
+            w={{ base: "100%", md: "420px" }}
+            maxW='100%'
+            background='transparent'
+            borderRadius='15px'
+            mx={{ base: "auto", lg: "unset" }}
+            me='auto'
+            mb={{ base: "20px", md: "auto" }}>
             <h4
               style={{
                 fontSize: ".9em",
@@ -177,120 +171,118 @@ function SignIn() {
             >
               {error}
             </h4>
-          <FormControl>
-            <FormLabel
-              display='flex'
-              ms='4px'
-              fontSize='sm'
-              fontWeight='500'
-              color={textColor}
-              mb='8px'>
-              Email<Text color={brandStars}>*</Text>
-            </FormLabel>
-            <Input
-              isRequired={true}
-              variant='auth'
-              fontSize='sm'
-              ms={{ base: "0px", md: "0px" }}
-              type='email'
-              placeholder='mail@simmmple.com'
-              mb='24px'
-              fontWeight='500'
-              size='lg'
-              onChange={(event) => {
-                setEmail(event.target.value);
-                setError(undefined);
-              }}
-            />
-            <FormLabel
-              ms='4px'
-              fontSize='sm'
-              fontWeight='500'
-              color={textColor}
-              display='flex'>
-              Password<Text color={brandStars}>*</Text>
-            </FormLabel>
-            <InputGroup size='md'>
+            <FormControl>
+              <FormLabel
+                display='flex'
+                ms='4px'
+                fontSize='sm'
+                fontWeight='500'
+                color={textColor}
+                mb='8px'>
+                First name<Text color={brandStars}>*</Text>
+              </FormLabel>
               <Input
                 isRequired={true}
-                fontSize='sm'
-                placeholder='Min. 8 characters'
-                mb='24px'
-                size='lg'
-                type={show ? "text" : "password"}
                 variant='auth'
+                fontSize='sm'
+                ms={{ base: "0px", md: "0px" }}
+                placeholder='First name'
+                mb='24px'
+                fontWeight='500'
+                size='lg'
                 onChange={(event) => {
-                  setPassword(event.target.value);
+                  setName(event.target.value);
                   setError(undefined);
                 }}
               />
-              <InputRightElement display='flex' alignItems='center' mt='4px'>
-                <Icon
-                  color={textColorSecondary}
-                  _hover={{ cursor: "pointer" }}
-                  as={show ? RiEyeCloseLine : MdOutlineRemoveRedEye}
-                  onClick={handleClick}
-                />
-              </InputRightElement>
-            </InputGroup>
-            <Flex justifyContent='space-between' align='center' mb='24px'>
-              <FormControl display='flex' alignItems='center'>
-                <Checkbox
-                  id='remember-login'
-                  colorScheme='brandScheme'
-                  me='10px'
-                />
-                <FormLabel
-                  htmlFor='remember-login'
-                  mb='0'
-                  fontWeight='normal'
-                  color={textColor}
-                  fontSize='sm'>
-                  Keep me logged in
-                </FormLabel>
-              </FormControl>
-              <NavLink to='/auth/forgot-password'>
-                <Text
-                  color={textColorBrand}
+              <FormLabel
+                display='flex'
+                ms='4px'
+                fontSize='sm'
+                fontWeight='500'
+                color={textColor}
+                mb='8px'>
+                Email<Text color={brandStars}>*</Text>
+              </FormLabel>
+              <Input
+                isRequired={true}
+                variant='auth'
+                fontSize='sm'
+                ms={{ base: "0px", md: "0px" }}
+                type='email'
+                placeholder='mail@simmmple.com'
+                mb='24px'
+                fontWeight='500'
+                size='lg'
+                onChange={(event) => {
+                  setEmail(event.target.value);
+                  setError(undefined);
+                }}
+              />
+              <FormLabel
+                ms='4px'
+                fontSize='sm'
+                fontWeight='500'
+                color={textColor}
+                display='flex'>
+                Password<Text color={brandStars}>*</Text>
+              </FormLabel>
+              <InputGroup size='md'>
+                <Input
+                  isRequired={true}
                   fontSize='sm'
-                  w='124px'
-                  fontWeight='500'>
-                  Forgot password?
-                </Text>
-              </NavLink>
+                  placeholder='Min. 8 characters'
+                  mb='24px'
+                  size='lg'
+                  type={show ? "text" : "password"}
+                  variant='auth'
+                  onChange={(event) => {
+                    setPassword(event.target.value);
+                    setError(undefined);
+                  }}
+                />
+                <InputRightElement display='flex' alignItems='center' mt='4px'>
+                  <Icon
+                    color={textColorSecondary}
+                    _hover={{ cursor: "pointer" }}
+                    as={show ? RiEyeCloseLine : MdOutlineRemoveRedEye}
+                    onClick={handleClick}
+                  />
+                </InputRightElement>
+              </InputGroup>
+              <Button
+                fontSize='sm'
+                variant='brand'
+                fontWeight='500'
+                w='100%'
+                h='50'
+                mb='24px'
+                onClick={register}
+              >
+                {buttonText}
+              </Button>
+            </FormControl>
+            <Flex
+              flexDirection='column'
+              justifyContent='center'
+              alignItems='start'
+              maxW='100%'
+              mt='0px'>
+              <Text color={textColorDetails} fontWeight='400' fontSize='14px'>
+                Already have account?
+                <NavLink to='/auth/sign-in'>
+                  <Text
+                    color={textColorBrand}
+                    as='span'
+                    ms='5px'
+                    fontWeight='500'>
+                    Login
+                  </Text>
+                </NavLink>
+              </Text>
             </Flex>
-            <Button
-              fontSize='sm'
-              variant='brand'
-              fontWeight='500'
-              w='100%'
-              h='50'
-              mb='24px'
-              onClick={login}>
-              Sign In
-            </Button>
-          </FormControl>
-          <Flex
-            flexDirection='column'
-            justifyContent='center'
-            alignItems='start'
-            maxW='100%'
-            mt='0px'>
-            <Text color={textColorDetails} fontWeight='400' fontSize='14px'>
-              Not registered yet?
-              <NavLink to='/auth/sign-up'>
-                <Text
-                  color={textColorBrand}
-                  as='span'
-                  ms='5px'
-                  fontWeight='500'>
-                  Create an Account
-                </Text>
-              </NavLink>
-            </Text>
           </Flex>
         </Flex>
-      </Flex>
       </Flex>
     </DefaultAuth>
   );
