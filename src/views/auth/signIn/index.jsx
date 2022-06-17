@@ -51,14 +51,13 @@ import { RiEyeCloseLine } from "react-icons/ri";
 import { useAuth } from "../../../auth-context/auth.context";
 import AuthApi from "../../../api/auth";
 function SignIn() {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState("test@appseed.us");
+  const [password, setPassword] = useState("pass");
   const [error, setError] = useState(undefined);
   const [buttonText, setButtonText] = useState("Sign in");
   const history = useHistory();
   const { setUser } = useAuth();
   const { user } = useAuth();
-  
   // Chakra color mode
   const textColor = useColorModeValue("navy.700", "white");
   const textColorSecondary = "gray.400";
@@ -195,6 +194,7 @@ function SignIn() {
               type='email'
               placeholder='mail@simmmple.com'
               mb='24px'
+              defaultValue={email}
               fontWeight='500'
               size='lg'
               onChange={(event) => {
@@ -217,6 +217,7 @@ function SignIn() {
                 placeholder='Min. 8 characters'
                 mb='24px'
                 size='lg'
+                defaultValue={password}
                 type={show ? "text" : "password"}
                 variant='auth'
                 onChange={(event) => {
