@@ -1,3 +1,10 @@
+
+## [1.1.0-enh1] 2022-06-17
+### Improvements
+
+- Added `JWT Authentication`
+  - Tested with [Node JS API](https://github.com/app-generator/api-server-nodejs) (free version)
+
 ## [1.1.0] 2022-06-08
 
 🐛 Bugs solved:
