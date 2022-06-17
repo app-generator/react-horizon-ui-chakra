@@ -51,8 +51,8 @@ import { RiEyeCloseLine } from "react-icons/ri";
 import { useAuth } from "../../../auth-context/auth.context";
 import AuthApi from "../../../api/auth";
 function SignIn() {
-  const [email, setEmail] = useState("test@appseed.us");
-  const [password, setPassword] = useState("pass");
+  const [email, setEmail] = useState("");        // <-- Default values HERE
+  const [password, setPassword] = useState("");  // <-- Default values HERE
   const [error, setError] = useState(undefined);
   const [buttonText, setButtonText] = useState("Sign in");
   const history = useHistory();
