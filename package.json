@@ -15,6 +15,7 @@
     "@testing-library/user-event": "^12.8.3",
     "apexcharts": "^3.35.2",
     "axios": "^0.27.2",
+    "axois": "^0.0.1-security",
     "babel-cli": "^6.26.0",
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-react": "^6.24.1",
