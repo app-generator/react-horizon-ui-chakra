@@ -1,6 +1,6 @@
 # React Horizon UI ⚡️
 
-Designed for those who like modern UI elements and beautiful websites. Made of hundred of elements, designed blocks and fully coded pages, Horizon UI is ready to help you create stunning websites and webapps.
+Designed for those who like modern UI elements and beautiful websites. Made of hundred of elements, designed blocks and fully coded pages, **React Horizon UI** is ready to help you create stunning websites and webapps.
 The product comes with a simple JWT authentication flow: `login`/`register`/`logout` powered by an open-source **Node JS API** Backend via `Passport` Library.
 
 <br />
@@ -8,6 +8,7 @@ The product comes with a simple JWT authentication flow: `login`/`register`/`log
 > Features
 
 - ✅ Modern aesthetics UI design - Designed by *Simmmple*
+- ✅ Styled with `Chakra Ui`, `Dark-Mode`
 - ✅ Authentication: JWT Login/Register/Logout
 - ✅ **Full-stack Ready** using a **Node JS API Server** (open-source project) - Server Features
   - `Typescript` / SQLite Persistence / TypeORM / Joy (validation)
