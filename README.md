@@ -16,7 +16,7 @@ The product comes with a simple JWT authentication flow: `login`/`register`/`log
 
 > Links
 
-* 👉 [React Horizon UI](https://react-horizon-ui-chakra.appseed-srv1.com) - LIVE Demo
+* 👉 [React Horizon UI](https://react-horizon-ui-chakra.appseed-srv1.com/#/auth/sign-in/default) - LIVE Demo
 * 👉 Free Support via Github (issues tracker) and [Discord](https://discord.gg/fZC6hup).
 
 <br />
