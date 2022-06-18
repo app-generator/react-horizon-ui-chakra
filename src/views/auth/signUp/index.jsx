@@ -129,7 +129,7 @@ function SignIn() {
         flexDirection='column'>
         <Box me='auto'>
           <Heading color={textColor} fontSize='36px' mb='10px'>
-            Sign Up
+            Sign UP
           </Heading>
           <Text
             mb='36px'
@@ -137,7 +137,7 @@ function SignIn() {
             color={textColorSecondary}
             fontWeight='400'
             fontSize='md'>
-            Enter your email and password to sign up!
+            Open-source Full-stack Starter built with React and Chakra
           </Text>
         </Box>
         <Flex

@@ -51,8 +51,8 @@ import { RiEyeCloseLine } from "react-icons/ri";
 import { useAuth } from "../../../auth-context/auth.context";
 import AuthApi from "../../../api/auth";
 function SignIn() {
-  const [email, setEmail] = useState("");        // <-- Default values HERE
-  const [password, setPassword] = useState("");  // <-- Default values HERE
+  const [email, setEmail] = useState("");  // <-- Default values HERE
+  const [password, setPassword] = useState("");       // <-- Default values HERE
   const [error, setError] = useState(undefined);
   const [buttonText, setButtonText] = useState("Sign in");
   const history = useHistory();
@@ -133,7 +133,7 @@ function SignIn() {
         flexDirection='column'>
         <Box me='auto'>
           <Heading color={textColor} fontSize='36px' mb='10px'>
-            Sign In
+            Sign IN
           </Heading>
           <Text
             mb='36px'
@@ -141,7 +141,7 @@ function SignIn() {
             color={textColorSecondary}
             fontWeight='400'
             fontSize='md'>
-            Enter your email and password to sign in!
+            Open-source Full-stack Starter built with React and Chakra 
           </Text>
         </Box>
         <Flex
