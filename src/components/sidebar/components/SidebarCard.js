@@ -53,7 +53,7 @@ export default function SidebarDocs() {
           textAlign='center'
           px='10px'
           mb='14px'>
-          Upgrade to PRO
+          Horizon React
         </Text>
         <Text
           fontSize='14px'
@@ -61,11 +61,10 @@ export default function SidebarDocs() {
           px='10px'
           mb='14px'
           textAlign='center'>
-          Improve your development process and start doing more with Horizon UI
-          PRO!
+          Open-Source React App styled with Chakra UI.
         </Text>
       </Flex>
-      <Link href='https://horizon-ui.com/pro'>
+      <Link href='https://appseed.us/support/'>
         <Button
           bg='whiteAlpha.300'
           _hover={{ bg: "whiteAlpha.200" }}
@@ -76,7 +75,7 @@ export default function SidebarDocs() {
           fontSize='sm'
           minW='185px'
           mx='auto'>
-          Upgrade to PRO
+          Get Support
         </Button>
       </Link>
     </Flex>
