@@ -40,8 +40,8 @@ To use the product Node JS (>= 12.x) is required and GIT to clone/download the p
 **Step 1** - Clone the project
 
 ```bash
-$ git clone https://github.com/app-generator/react-berry-dashboard.git
-$ cd react-berry-dashboard
+$ git clone https://github.com/app-generator/react-horizon-ui-chakra.git
+$ cd react-horizon-ui-chakra
 ```
 
 <br >
