@@ -3,18 +3,20 @@
 Designed for those who like modern UI elements and beautiful websites. Made of hundred of elements, designed blocks and fully coded pages, Horizon UI is ready to help you create stunning websites and webapps.
 The product comes with a simple JWT authentication flow: `login`/`register`/`logout` powered by an open-source **Node JS API** Backend via `Passport` Library.
 
+<br />
+
 > Features
 
-- Modern aesthetics UI design - Designed by *Simmmple*
-- Authentication: JWT Login/Register/Logout
-- **Full-stack Ready** using a **Node JS API Server** (open-source project) - Server Features
+- ✅ Modern aesthetics UI design - Designed by *Simmmple*
+- ✅ Authentication: JWT Login/Register/Logout
+- ✅ **Full-stack Ready** using a **Node JS API Server** (open-source project) - Server Features
   - `Typescript` / SQLite Persistence / TypeORM / Joy (validation)
   - Passport library - `passport-jwt` strategy.
 
 > Links
 
-* [React Horizon UI](https://react-horizon-ui-chakra.appseed-srv1.com) - LIVE Demo
-* Free Support via Github (issues tracker) and [Discord](https://discord.gg/fZC6hup).
+* 👉 [React Horizon UI](https://react-horizon-ui-chakra.appseed-srv1.com) - LIVE Demo
+* 👉 Free Support via Github (issues tracker) and [Discord](https://discord.gg/fZC6hup).
 
 <br />
 
