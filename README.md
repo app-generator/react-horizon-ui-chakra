@@ -5,7 +5,7 @@ The product comes with a simple JWT authentication flow: `login`/`register`/`log
 
 <br />
 
-> Features
+> 🚀 Built with [React App Generator](https://appseed.us/generator/react/) for [Horizon UI](https://appseed.us/generator/react/horizon-ui/)
 
 - ✅ Modern aesthetics UI design - Designed by **[Simmmple](https://simmmple.com/)**
 - ✅ Styled with `Chakra Ui`, `Dark-Mode`
@@ -16,8 +16,9 @@ The product comes with a simple JWT authentication flow: `login`/`register`/`log
 
 > Links
 
-* 👉 [React Horizon UI](https://react-horizon-ui-chakra.appseed-srv1.com/#/auth/sign-in/default) - LIVE Demo
-* 👉 Free Support via Github (issues tracker) and [Discord](https://discord.gg/fZC6hup).
+- 👉 [React Horizon UI](https://react-horizon-ui-chakra.appseed-srv1.com/#/auth/sign-in/default) - LIVE Demo
+- 👉 Free Support via Github (issues tracker) and [Discord](https://discord.gg/fZC6hup).
+- ✅ [React App Generator - Horizon UI](https://www.youtube.com/watch?v=eUCmkhsxOM4) - `Video` presentation via **yTube**
 
 <br />
 
