@@ -7,7 +7,7 @@ The product comes with a simple JWT authentication flow: `login`/`register`/`log
 
 > 🚀 Built with **[React App Generator](https://appseed.us/generator/react/)** for *[Horizon UI](https://appseed.us/generator/react/horizon-ui/)*
 
-- ✅ Modern aesthetics UI design - Designed by **[Simmmple](https://simmmple.com/)**
+- ✅ Modern aesthetics UI design - Designed by *[Simmmple](https://simmmple.com/)*
 - ✅ Styled with `Chakra Ui`, `Dark-Mode`
 - ✅ Authentication: JWT Login/Register/Logout
 - ✅ **Full-stack Ready** using a **Node JS API Server** (open-source project) - Server Features
