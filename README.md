@@ -18,8 +18,8 @@ The product comes with a simple JWT authentication flow: `login`/`register`/`log
 
 - 👉 [React Horizon UI](https://appseed.us/product/horizon-ui/api-server-nodejs/) - `product page`
 - 👉 [React Horizon UI](https://react-horizon-ui-chakra.appseed-srv1.com/#/auth/sign-in/default) - `LIVE Demo`
-- 👉 Free Support via Github (issues tracker) and [Discord](https://discord.gg/fZC6hup).
-- ✅ [React App Generator - Horizon UI](https://www.youtube.com/watch?v=eUCmkhsxOM4) - `Video` presentation via **yTube**
+- 👉 **Free [Support](https://appseed.us/support/)** (registered users) via `Email` and `Discord`
+- ✅ [PRO Version Available](#pro-version) - `enhanced UI` and more `features`
 
 <br />
 
@@ -146,6 +146,23 @@ $ yarn dev
 The API server will start using the `PORT` specified in `.env` file (default 5000).
 
 <br /> 
+
+## PRO Version
+
+> For more components, pages and priority on support, feel free to take a look at this amazing starter:
+
+Designed for those who like modern UI elements and beautiful websites, Horizon UI is ready to help you create stunning websites and webapps.
+This premium design powered by `Chakra UI` comes with many examples for pages like NFTs Pages, Authentication Pages, Profile and so on. 
+
+- 👉 [React Horizon UI PRO](https://appseed.us/product/horizon-ui-pro/full-stack/) - Product Page
+  - ✅ `Enhanced UI` - more pages and components
+  - ✅ `Priority` on support
+
+<br >
+
+![React Horizon UI PRO - Full-Stack starter provided by AppSeed and Simmmple.](https://user-images.githubusercontent.com/51070104/175255148-7475cb47-0f63-48ee-a39d-7620beca6783.png)
+
+<br />
 
 ---
 [React Horizon UI](https://appseed.us/product/horizon-ui/api-server-nodejs/) - Provided by Simmmple and **AppSeed [App Generator](https://appseed.us/generator)**.
