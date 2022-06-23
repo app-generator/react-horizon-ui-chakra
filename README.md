@@ -1,4 +1,4 @@
-# React Horizon UI ⚡️
+# [React Horizon UI](https://appseed.us/product/horizon-ui/api-server-nodejs/) ⚡️
 
 Designed for those who like modern UI elements and beautiful websites. Made of hundred of elements, designed blocks and fully coded pages, **React Horizon UI** is ready to help you create stunning websites and webapps.
 The product comes with a simple JWT authentication flow: `login`/`register`/`logout` powered by an open-source **Node JS API** Backend via `Passport` Library.
@@ -16,7 +16,8 @@ The product comes with a simple JWT authentication flow: `login`/`register`/`log
 
 > Links
 
-- 👉 [React Horizon UI](https://react-horizon-ui-chakra.appseed-srv1.com/#/auth/sign-in/default) - LIVE Demo
+- 👉 [React Horizon UI](https://appseed.us/product/horizon-ui/api-server-nodejs/) - `product page`
+- 👉 [React Horizon UI](https://react-horizon-ui-chakra.appseed-srv1.com/#/auth/sign-in/default) - `LIVE Demo`
 - 👉 Free Support via Github (issues tracker) and [Discord](https://discord.gg/fZC6hup).
 - ✅ [React App Generator - Horizon UI](https://www.youtube.com/watch?v=eUCmkhsxOM4) - `Video` presentation via **yTube**
 
@@ -147,4 +148,4 @@ The API server will start using the `PORT` specified in `.env` file (default 500
 <br /> 
 
 ---
-React Horizon UI - Provided by Simmmple and **AppSeed [App Generator](https://appseed.us/generator)**.
+[React Horizon UI](https://appseed.us/product/horizon-ui/api-server-nodejs/) - Provided by Simmmple and **AppSeed [App Generator](https://appseed.us/generator)**.
