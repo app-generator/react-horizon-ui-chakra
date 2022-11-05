@@ -3,9 +3,12 @@
 Designed for those who like modern UI elements and beautiful websites. Made of hundred of elements, designed blocks and fully coded pages, **[React Horizon UI](https://appseed.us/product/horizon-ui/api-server-nodejs/)** is ready to help you create stunning websites and webapps.
 The product comes with a simple JWT authentication flow: `login`/`register`/`logout` powered by an open-source **Node JS API** Backend via `Passport` Library.
 
+- 👉 [React Horizon UI](https://appseed.us/product/horizon-ui/api-server-nodejs/) - `product page`
+- 👉 [React Horizon UI](https://react-horizon-ui-chakra.appseed-srv1.com/#/auth/sign-in/default) - `LIVE Demo`
+
 <br />
 
-> 🚀 Built with **[React App Generator](https://appseed.us/generator/react/)** for *[Horizon UI](https://appseed.us/generator/react/horizon-ui/)*
+> 🚀 Built with **[React App Generator](https://appseed.us/generator/react/)** 
 
 - ✅ Modern aesthetics UI design - Designed by *[Simmmple](https://simmmple.com/)*
 - ✅ Styled with `Chakra Ui`, `Dark-Mode`
@@ -14,12 +17,17 @@ The product comes with a simple JWT authentication flow: `login`/`register`/`log
   - `Typescript` / SQLite Persistence / TypeORM / Joy (validation)
   - Passport library - `passport-jwt` strategy.
 
-> Links
+<br />
 
-- 👉 [React Horizon UI](https://appseed.us/product/horizon-ui/api-server-nodejs/) - `product page`
-- 👉 [React Horizon UI](https://react-horizon-ui-chakra.appseed-srv1.com/#/auth/sign-in/default) - `LIVE Demo`
-- 👉 **Free [Support](https://appseed.us/support/)** (registered users) via `Email` and `Discord`
-- ✅ [PRO Version Available](#pro-version) - `enhanced UI` and more `features`
+> ## Tests
+
+> `Compatibility matrix` tested with [Render API Wrapper](https://github.com/app-generator/deploy-automation-render).
+
+| NodeJS | NPM | YARN | 
+| --- | --- | --- |  
+| `v14.0.0` | ✅ | ✅ |
+| `v16.0.0` | ✅ | ✅ | 
+| `v18.0.0` | ❌ | ❌ | 
 
 <br />
 
