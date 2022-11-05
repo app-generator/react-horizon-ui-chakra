@@ -1,3 +1,11 @@
+# Change Log
+
+## [1.1.0-enh2] 2022-11-05
+### Improvements
+
+- Added `env.sample`
+- `API_URL` can be specified in `env` (optional)
+  - data used in `src/config.js`  
 
 ## [1.1.0-enh1] 2022-06-17
 ### Improvements

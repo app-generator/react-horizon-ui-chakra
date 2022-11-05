@@ -27,7 +27,7 @@ The product comes with a simple JWT authentication flow: `login`/`register`/`log
 | --- | --- | --- |  
 | `v14.0.0` | ✅ | ✅ |
 | `v16.0.0` | ✅ | ✅ | 
-| `v18.0.0` | ❌ | ❌ | 
+| `v18.0.0` | ✅ | ✅ | 
 
 <br />
 
