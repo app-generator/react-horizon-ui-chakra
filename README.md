@@ -1,6 +1,6 @@
 # [React Horizon UI](https://appseed.us/product/horizon-ui/api-server-nodejs/) ⚡️
 
-Designed for those who like modern UI elements and beautiful websites. Made of hundred of elements, designed blocks and fully coded pages, **React Horizon UI** is ready to help you create stunning websites and webapps.
+Designed for those who like modern UI elements and beautiful websites. Made of hundred of elements, designed blocks and fully coded pages, **[React Horizon UI](https://appseed.us/product/horizon-ui/api-server-nodejs/)** is ready to help you create stunning websites and webapps.
 The product comes with a simple JWT authentication flow: `login`/`register`/`logout` powered by an open-source **Node JS API** Backend via `Passport` Library.
 
 <br />
