@@ -8,6 +8,14 @@ The product comes with a simple JWT authentication flow: `login`/`register`/`log
 
 <br />
 
+## 🚀 `PROMO` [Spring Boost Campaign](https://appseed.us/discounts/) `50%OFF`
+
+> The **discount is applicable to all products and licenses** (no stock limits) until `15.MAR`
+
+[![Spring Boost Campaign](https://user-images.githubusercontent.com/51070104/221118889-171c5afc-4d01-402b-8681-61b37338e26c.png)](https://appseed.us/discounts/)
+
+<br />
+
 > 🚀 Built with **[React App Generator](https://appseed.us/generator/react/)** 
 
 - ✅ Modern aesthetics UI design - Designed by *[Simmmple](https://simmmple.com/)*
