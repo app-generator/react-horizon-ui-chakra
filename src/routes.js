@@ -8,6 +8,8 @@ import {
   MdLock,
   MdLogout,
   MdOutlineShoppingCart,
+  MdLogin,
+  MdAdminPanelSettings,
 } from "react-icons/md";
 
 // Admin Imports
@@ -21,7 +23,6 @@ import RTL from "views/admin/rtl";
 // import SignInCentered from "views/auth/signIn";
 import SignIn from "views/auth/signIn/index.jsx";
 import SignUp from "views/auth/signUp/index.jsx";
-
 
 const routes = [
   {
@@ -65,7 +66,7 @@ const routes = [
     layout: "/auth",
     path: "/sign-in",
     icon: (
-      <Icon as={MdHome} width='16px' height='16px' color='inherit' />
+      <Icon as={MdLogin} width='16px' height='16px' color='inherit' />
     ),
     component: SignIn,
     hide: true
@@ -75,7 +76,7 @@ const routes = [
     layout: "/auth",
     path: "/sign-up",
     icon: (
-      <Icon as={MdHome} width='16px' height='16px' color='inherit' />
+      <Icon as={MdLock} width='16px' height='16px' color='inherit' />
     ),
     component: SignUp,
     hide: true
@@ -84,7 +85,7 @@ const routes = [
     name: "RTL Admin",
     layout: "/rtl",
     path: "/rtl-default",
-    icon: <Icon as={MdHome} width='20px' height='20px' color='inherit' />,
+    icon: <Icon as={MdAdminPanelSettings} width='20px' height='20px' color='inherit' />,
     component: RTL,
   },
 ];

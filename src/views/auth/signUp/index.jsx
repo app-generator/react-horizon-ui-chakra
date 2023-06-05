@@ -179,14 +179,14 @@ function SignIn() {
                 fontWeight='500'
                 color={textColor}
                 mb='8px'>
-                First name<Text color={brandStars}>*</Text>
+                Username<Text color={brandStars}>*</Text>
               </FormLabel>
               <Input
                 isRequired={true}
                 variant='auth'
                 fontSize='sm'
                 ms={{ base: "0px", md: "0px" }}
-                placeholder='First name'
+                placeholder='Username'
                 mb='24px'
                 fontWeight='500'
                 size='lg'
