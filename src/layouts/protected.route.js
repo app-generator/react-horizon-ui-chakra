@@ -10,6 +10,9 @@ export const ProtectedRoute = ({ ...rest }) => {
   if (!user || !user.token || user.token === "") {
     return (
       <SweetAlert
+      style={{backgroundColor:'rgba(66, 153, 225, 0.6)'}}
+        confirmBtnText="Sign In"
+        confirmBtnStyle={{padding:'5px 15px 5px 15px'}}
         title="You must be signed in!"
         onCancel={() => history.push("/auth/sign-in")}
         onConfirm={() => history.push("/auth/sign-in")}
