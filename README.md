@@ -6,13 +6,7 @@ The product comes with a simple JWT authentication flow: `login`/`register`/`log
 - 👉 [React Horizon UI](https://appseed.us/product/horizon-ui/api-server-nodejs/) - `product page`
 - 👉 [React Horizon UI](https://react-horizon-ui-chakra.appseed-srv1.com/#/auth/sign-in/default) - `LIVE Demo`
 
-<br />
-
-## 🚀 `PROMO` [Spring Boost Campaign](https://appseed.us/discounts/) `50%OFF`
-
-> The **discount is applicable to all products and licenses** (no stock limits) until `15.MAR`
-
-[![Spring Boost Campaign](https://user-images.githubusercontent.com/51070104/221118889-171c5afc-4d01-402b-8681-61b37338e26c.png)](https://appseed.us/discounts/)
+![React Horizon UI](https://github.com/app-generator/react-horizon-ui-chakra/assets/51070104/d3270e37-1b35-4409-bdb6-c699fc51fc7d)
 
 <br />
 
